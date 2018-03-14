@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="person" class="kg.edu.com.iaau.test.Person" init-method="onCreate" destroy-method="onDestroy">
+        <constructor-arg value="Nurdoolot" name="name" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="1" name="id" type="int"></constructor-arg>
+        <constructor-arg name="address" ref="address"></constructor-arg>
+        <property name="taxId" value="123"></property>
+        <!--<property name="address" ref="address"></property>-->
+    </bean>
+
+    <bean id="address" class="kg.edu.com.iaau.test.Address">
+        <constructor-arg value="Ankara 1/8" name="street"></constructor-arg>
+        <constructor-arg value="720001" name="postcode"></constructor-arg>
+    </bean>
+
+</beans>
